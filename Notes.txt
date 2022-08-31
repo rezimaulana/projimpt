@@ -22,6 +22,7 @@ php artisan make:seeder PostsSeed
 add this to beginning use Illuminate\Support\Facades\DB;
 php artisan db:seed --class=PostsSeed
 =========================> add commit make api get all push
+
 =========================> add commit push
 
 
