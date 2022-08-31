@@ -3,10 +3,26 @@ Laravel Rest API Crud Authentication Authorization CRUD Consume API
 -/
 composer create-project --prefer-dist laravel/laravel projimpt
 making database
+-.env
+setup database
 =========================> add commit setup server push
+-/
 php artisan make:model Post -m
+-database\migrations\2022_08_31_200329_create_posts_table.php
+define the database column
+-/
 php artisan migrate
-
+=========================> add commit create model push
+-routes\api.php
+import model post
+make api get all
+notes: http://localhost:8000/api/posts/ everything goes at /api/
+-/
+php artisan make:seeder PostsSeed
+add this to beginning use Illuminate\Support\Facades\DB;
+php artisan db:seed --class=PostsSeed
+=========================> add commit make api get all push
+=========================> add commit push
 
 
 Tools:
