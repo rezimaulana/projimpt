@@ -1,0 +1,155 @@
+Tools:
+XAMPP
+VS Code
+Composer
+
+Create Laravel Project
+composer create-project --prefer-dist laravel/laravel crudLaravel
+
+Concept
+app => controller and model
+database => make and manage database (orm)
+resources => view page blade html
+routes => access routing url
+.env => database con
+
+Start Server
+php artisan serve
+
+Default Web URL
+routes/web.php
+
+Default View Page
+resources/views/welcome.blade.php
+
+Command to find Laravel Version
+Artisan is a powerful command-line interface included with Laravel.
+Open the command line terminal on your system. Navigate to your Laravel application directory.
+Then execute the following PHP artisan command to check the Laravel version.
+php artisan --version
+
+Route
+import your controller to routes
+always add controller
+use App\Http\Controllers\MenuController;
+use this to go to controller spesific function
+Route::get('/landing', [MenuController::class, 'landing']);
+
+Check Route Resource
+php artisan route:list
+
+Make Controller
+php artisan make:controller MenuController
+
+Make Controller Crud
+php artisan make:controller StudentController --resource
+use App\Models\Student;
+
+Make Model
+php artisan make:model Student
+add protected $table = 'student';
+
+Make View
+use emmet !
+view can be create manually
+CSS in head
+JS in bottom body
+
+Blade Template
+@yield
+@section
+@extends
+@include
+https://laravel.com/docs/9.x/blade
+https://www.youtube.com/watch?v=j7PQYHpFQJs
+https://stackoverflow.com/questions/29070456/laravel-difference-between-yield-and-section
+https://stackoverflow.com/questions/42327469/laravel-load-multiple-view-in-a-single-function
+layout app
+app
+components
+-header
+-footer
+-navigations
+contents
+
+Connect Database
+.env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_crudlaravel
+DB_USERNAME=root
+DB_PASSWORD=
+
+Check Connection
+https://laravel.com/docs/9.x/artisan#tinker
+php artisan tinker
+if(DB::connection()->getPdo()){echo "Connected to Database! " . "Database : " . DB::connection()->getDatabaseName();}
+
+Migrate Schema
+php artisan migrate
+
+Seeding
+add this to beginning use Illuminate\Support\Facades\DB;
+php artisan make:seeder usersSeed
+
+Run Seeding
+php artisan db:seed --class=KontakSeeder
+php artisan db:seed --class=UsersSeed
+php artisan db:seed --class=StudentsSeed
+
+Remove Seed
+https://stackoverflow.com/questions/44729769/laravel-seed-rollback-after-seeding-database#:~:text=use%20Undo%20Seeder%20for%20Laravel,Undo%20seeds%20run%20seeds%20again.
+delete manual
+php artisan migrate:fresh
+
+FrontEnd Setup Scaffolding
+https://laravel.com/docs/6.x/frontend
+https://laravel.com/docs/7.x/frontend
+Basic starting point using Bootstrap, React, and / or Vue!
+The Bootstrap and Vue scaffolding provided by Laravel is located in the laravel/ui Composer package.
+Which may be installed using Composer.
+PS E:\xampp\htdocs\DevPhpSql\crudLaravel>
+composer require laravel/ui
+php artisan ui bootstrap --auth
+create app/Http/Controllers/Auth and app/Http/Controllers/HomeController
+modify route/web.php
+add resources/js/bootstrap.js, resources/js/sass, resources/views/auth, resources/views/layouts/app.blade.php
+npm install && npm run dev
+https://stackoverflow.com/questions/65627536/the-token-is-not-a-valid-statement-separator-in-this-version
+npm install -and npm run dev
+php artisan serve
+
+Make Migrations
+php artisan make:migration create_students_table
+php artisan migrate
+
+Remove Migrations
+https://stackoverflow.com/questions/16871413/safely-remove-migration-in-laravel
+php artisan migrate:rollback
+
+Gate
+https://stackoverflow.com/questions/49748998/how-to-use-authorization-in-lumen
+https://laracasts.com/discuss/channels/lumen/using-authorization-gate-in-lumen
+crudLaravel\app\Providers\AuthServiceProvider.php
+use Illuminate\Support\Facades\Gate;
+
+---------------------------------------------------
+Cloning from Git
+
+Clone your project
+Go to the folder application using cd command on your cmd or terminal
+Run composer install on your cmd or terminal
+Copy .env.example file to .env on the root folder. You can type copy .env.example .env if using command prompt Windows or cp .env.example .env if using terminal, Ubuntu
+Open your .env file and change the database name (DB_DATABASE) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
+Run php artisan key:generate
+Run php artisan migrate
+Run php artisan serve
+Go to http://localhost:8000/
+---------------------------------------------------
+Authorization
+Authentication
+Login Logout Register
+Session
+CRUD
+---------------------------------------------------
