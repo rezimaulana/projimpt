@@ -1,3 +1,14 @@
+Laravel Rest API Crud Authentication Authorization CRUD Consume API
+--------------------------
+-/
+composer create-project --prefer-dist laravel/laravel projimpt
+making database
+=========================> add commit setup server push
+php artisan make:model Post -m
+php artisan migrate
+
+
+
 Tools:
 XAMPP
 VS Code
@@ -48,6 +59,7 @@ use App\Models\Student;
 Make Model
 php artisan make:model Student
 add protected $table = 'student';
+with migration php artisan make:model Student -m
 
 Make View
 use emmet !
@@ -71,6 +83,23 @@ components
 -footer
 -navigations
 contents
+
+FrontEnd Setup Scaffolding
+https://laravel.com/docs/6.x/frontend
+https://laravel.com/docs/7.x/frontend
+Basic starting point using Bootstrap, React, and / or Vue!
+The Bootstrap and Vue scaffolding provided by Laravel is located in the laravel/ui Composer package.
+Which may be installed using Composer.
+PS E:\xampp\htdocs\DevPhpSql\crudLaravel>
+composer require laravel/ui
+php artisan ui bootstrap --auth
+create app/Http/Controllers/Auth and app/Http/Controllers/HomeController
+modify route/web.php
+add resources/js/bootstrap.js, resources/js/sass, resources/views/auth, resources/views/layouts/app.blade.php
+npm install && npm run dev
+https://stackoverflow.com/questions/65627536/the-token-is-not-a-valid-statement-separator-in-this-version
+npm install -and npm run dev
+php artisan serve
 
 Connect Database
 .env
@@ -102,23 +131,6 @@ Remove Seed
 https://stackoverflow.com/questions/44729769/laravel-seed-rollback-after-seeding-database#:~:text=use%20Undo%20Seeder%20for%20Laravel,Undo%20seeds%20run%20seeds%20again.
 delete manual
 php artisan migrate:fresh
-
-FrontEnd Setup Scaffolding
-https://laravel.com/docs/6.x/frontend
-https://laravel.com/docs/7.x/frontend
-Basic starting point using Bootstrap, React, and / or Vue!
-The Bootstrap and Vue scaffolding provided by Laravel is located in the laravel/ui Composer package.
-Which may be installed using Composer.
-PS E:\xampp\htdocs\DevPhpSql\crudLaravel>
-composer require laravel/ui
-php artisan ui bootstrap --auth
-create app/Http/Controllers/Auth and app/Http/Controllers/HomeController
-modify route/web.php
-add resources/js/bootstrap.js, resources/js/sass, resources/views/auth, resources/views/layouts/app.blade.php
-npm install && npm run dev
-https://stackoverflow.com/questions/65627536/the-token-is-not-a-valid-statement-separator-in-this-version
-npm install -and npm run dev
-php artisan serve
 
 Make Migrations
 php artisan make:migration create_students_table
