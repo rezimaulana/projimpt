@@ -1,4 +1,15 @@
-Laravel Rest API Crud Authentication Authorization CRUD Consume API
+--------------------------
+Laravel
+--------------------------
+-Rest API
+-Crud
+-Authentication
+-Authorization
+-CRUD
+-Consume API
+-Upload File
+-Download File
+-Datatables
 --------------------------
 -/
 composer create-project --prefer-dist laravel/laravel projimpt
@@ -22,10 +33,11 @@ php artisan make:seeder PostsSeed
 add this to beginning use Illuminate\Support\Facades\DB;
 php artisan db:seed --class=PostsSeed
 =========================> add commit make api get all push
-
+https://www.youtube.com/watch?v=WDha52dbLWM
 =========================> add commit push
-
-
+--------------------------
+Footnotes
+--------------------------
 Tools:
 XAMPP
 VS Code
